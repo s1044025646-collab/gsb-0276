@@ -1,0 +1,20 @@
+{
+  "name": "mandelbrot-escape-service",
+  "version": "1.0.0",
+  "description": "离线 Mandelbrot 集逃逸时间计算服务（仅 API 与 CLI，TypeScript + Node.js + SQLite）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "mandel": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --no-warnings=ExperimentalWarning dist/server.js",
+    "demo": "node --no-warnings=ExperimentalWarning dist/demo.js",
+    "test": "npm run build && node --no-warnings=ExperimentalWarning --test test/*.test.js",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "license": "MIT"
+}

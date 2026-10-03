@@ -1,0 +1,7 @@
+node_modules/
+dist/
+data/
+exports/
+server.out
+server.err
+*.log
