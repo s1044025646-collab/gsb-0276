@@ -1,0 +1,23 @@
+{
+  "name": "mandelbrot-escape-grid",
+  "version": "1.0.0",
+  "description": "离线 Mandelbrot 集逃逸时间计算服务（仅 API 与 CLI，TypeScript + Node.js + SQLite）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "mandel": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test --experimental-sqlite \"dist/test/*.test.js\"",
+    "start": "node --experimental-sqlite dist/server/index.js",
+    "demo": "node --experimental-sqlite demo/run-demo.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
